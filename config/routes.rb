@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'home#index'
+  get 'about' => 'home#about'
+
   resources :articles
   delete 'articles/:id/delete' => 'articles#destroy', as: 'articles_delete'
   get '/articles/:id/delete' => 'articles#destroy'
