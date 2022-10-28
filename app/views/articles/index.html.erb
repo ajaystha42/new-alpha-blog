@@ -1,0 +1,18 @@
+<h1> All Articles </h1>
+<%= link_to "New Article", new_article_path %>
+<% if @articles.size > 0 %>
+<% @articles.each do |article| %>
+    <p>
+        Id: <%= article.id %>
+    </p>
+    <p>
+        Title: <%= article.title %>
+    </p>
+    <p>
+        Description: <%= article.description %>
+    </p>
+<% end %>
+<% else %>
+    <p> No Articles </p>
+<% end %>
+
