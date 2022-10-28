@@ -1,18 +1,32 @@
 <h1> All Articles </h1>
-<%= link_to "New Article", new_article_path %>
+<%= link_to "New Article", new_article_path %> 
+
 <% if @articles.size > 0 %>
-<% @articles.each do |article| %>
-    <p>
-        Id: <%= article.id %>
-    </p>
-    <p>
-        Title: <%= article.title %>
-    </p>
-    <p>
-        Description: <%= article.description %>
-    </p>
-<% end %>
+<table border="2" >
+    <tr>
+        <th> Id </th>
+        <th> Title </th>
+        <th> Description </th>
+        <th> Action </th>
+    </tr>
+    <% @articles.each do |article| %>
+        <tr>
+            <td>
+                <%= article.id %>
+            </td>
+            <td>
+                <%= article.title %>
+            </td>
+            <td>
+               <%= article.description %>
+            </td>
+            <td>
+               <p> <%= link_to 'View', article_path(article)  %> | <%= link_to 'Edit',edit_article_path(article)  %> | <%= link_to 'Delete',edit_article_path(article)  %> </p>
+            </td>
+        </tr>
+    <% end %>
+</table>
 <% else %>
     <p> No Articles </p>
-<% end %>
+<%end%>
 
