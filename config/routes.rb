@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :articles
+  delete 'articles/:id/delete' => 'articles#destroy', as: 'articles_delete'
+  get '/articles/:id/delete' => 'articles#destroy'
 end

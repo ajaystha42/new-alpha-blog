@@ -6,16 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-      <ul>
-        <% flash.each do |name, msg| %>
-          <li> <%= msg %> </li>
-        <% end %>
-      </ul>
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
 </html>
