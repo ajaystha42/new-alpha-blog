@@ -1,6 +1,6 @@
 {
-    "files.associations": {
-        "*.html.erb": "html",
-        "*.erb": "erb"
-     }
+    // "files.associations": {
+    //     "*.html.erb": "html",
+    //     "*.erb": "erb"
+    //  }
 }
