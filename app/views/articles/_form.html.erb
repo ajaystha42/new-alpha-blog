@@ -1,13 +1,5 @@
-<div class="text-center">
-    <% if @article.errors.any? %>
-        <h2>Following Errors Occured:</h2>
-        <ul>
-            <% @article.errors.full_messages.each do |err| %>
-            <li><%= err %></li>
-            <% end %>
-        </ul>
-    <% end %>
-</div>
+
+ <%= render 'shared/errors', obj: @article %>
 
 <div class="row">
   <div class="col-xs-12">
@@ -15,13 +7,13 @@
     <div class="form-group">
       <div class="control-label col-sm-2"><%= f.label :title %></div>
       <div class="col-sm-8">
-        <%= f.text_field :title, class: 'form-control', placeholder: "Title of Article", autofocus: true%>
+        <%= f.text_field :title, class: 'form-control', placeholder: "Title of Article", autofocus: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="control-label col-sm-2"><%= f.label :description %></div>
       <div class="col-sm-8">
-        <%= f.text_area :description, rows: 10, class: 'form-control', placeholder: "Description", autofocus: true%>
+        <%= f.text_area :description, rows: 10, class: 'form-control', placeholder: "Description" %>
       </div>
     </div>
     <div class="form-group">
